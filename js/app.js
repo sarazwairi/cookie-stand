@@ -8,7 +8,7 @@ let seattle={
   maxCustPerHour:65,
   avgCookie:6.3,
   cookiesPerHour:[],
-  function(){
+  cust:function(){
     for(var i=0;i<hours.lenght,i++){
      let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.cookiesPerHour));
@@ -23,7 +23,7 @@ let Tokyo={
   maxCustPerHour:24,
   avgCookie:1.2,
   cookiesPerHour:[],
-  function(){
+  cust:function(){
     for(var i=0;i<hours.lenght,i++){
      let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.cookiesPerHour));
@@ -38,7 +38,7 @@ let Dubai={
   maxCustPerHour:38,
   avgCookie:3.7,
   cookiesPerHour:[],
-  function(){
+  cust:function(){
     for(var i=0;i<hours.lenght,i++){
      let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.cookiesPerHour));
@@ -53,7 +53,7 @@ let Paris={
   maxCustPerHour:38,
   avgCookie:2.3,
   cookiesPerHour:[],
-  function(){
+  cust:function(){
     for(var i=0;i<hours.lenght,i++){
      let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.cookiesPerHour));
@@ -68,7 +68,7 @@ let Lima={
   maxCustPerHour:16,
   avgCookie:4.6,
   cookiesPerHour:[],
-  function(){
+  cust:function(){
     for(var i=0;i<hours.lenght,i++){
      let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.cookiesPerHour));
@@ -87,3 +87,26 @@ let img=document.createElement('img');
 
 parent1.appendChild(image);
 image.setAttribute('src','img/salmon.png');
+
+//seattle
+let totalcookies=0;
+seattle.cust();
+
+let firstHeader=document.createElement('h2');
+parent1.appendChild(firstHeader);
+firstHeader.textContent='seattle';
+
+let firstlist=document.createElement('ul');
+parent1.appendChild(firstlist);
+
+//to add the items
+for(let n=0;n<seattle.cookiesPerHour.length;n++){
+  let listItem=document.createElement('li');
+  firstlist.textContent=`${hours[n]}:${seattle.cookiesPerHour[n]} cookies`;
+  totalcookies=totalcookies+seattle.cookiesPerHour[n];
+}
+
+//add the total
+let listItem=document.createElement('li');
+firstlist.appendChild(listItem);
+listItem.textContent=`Total: ${totalcookies}cookies`;
