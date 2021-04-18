@@ -23,7 +23,6 @@ let seattle={
 //Tokyo
 // eslint-disable-next-line no-unused-vars
 let Tokyo={
-  name:'Tokyo',
   minCustPerHour:3,
   maxCustPerHour:24,
   avgCookie:1.2,
@@ -31,7 +30,7 @@ let Tokyo={
   cust:function(){
     for(let i=0;i<hours.lenght;i++){
       let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
-      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.cookiesPerHour));
+      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.avgCookie));
     }
   }
 };
@@ -39,7 +38,6 @@ let Tokyo={
 //Dubai
 // eslint-disable-next-line no-unused-vars
 let Dubai={
-  name:'Dubai',
   minCustPerHour:11,
   maxCustPerHour:38,
   avgCookie:3.7,
@@ -47,7 +45,7 @@ let Dubai={
   cust:function(){
     for(let i=0;i<hours.lenght;i++){
       let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
-      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.cookiesPerHour));
+      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.avgCookie));
     }
   }
 };
@@ -55,7 +53,6 @@ let Dubai={
 //Paris
 // eslint-disable-next-line no-unused-vars
 let Paris={
-  name:'Paris',
   minCustPerHour:20,
   maxCustPerHour:38,
   avgCookie:2.3,
@@ -63,7 +60,7 @@ let Paris={
   cust:function(){
     for(let i=0;i<hours.lenght;i++){
       let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
-      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.cookiesPerHour));
+      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.avgCookie));
     }
   }
 };
@@ -71,7 +68,6 @@ let Paris={
 //Lima
 // eslint-disable-next-line no-unused-vars
 let Lima={
-  name:'Lima',
   minCustPerHour:2,
   maxCustPerHour:16,
   avgCookie:4.6,
@@ -79,7 +75,7 @@ let Lima={
   cust:function(){
     for(let i=0;i<hours.lenght;i++){
       let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
-      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.cookiesPerHour));
+      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.avgCookie));
     }
   }
 };
