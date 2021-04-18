@@ -1,6 +1,11 @@
 'use strict';
 let hours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
+
+//generating random numbers
+function randomCustomers(min,max){
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
 //seattle
 let seattle={
   name:'seattle',
@@ -17,6 +22,7 @@ let seattle={
 };
 
 //Tokyo
+// eslint-disable-next-line no-unused-vars
 let Tokyo={
   name:'Tokyo',
   minCustPerHour:3,
@@ -32,6 +38,7 @@ let Tokyo={
 };
 
 //Dubai
+// eslint-disable-next-line no-unused-vars
 let Dubai={
   name:'Dubai',
   minCustPerHour:11,
@@ -47,6 +54,7 @@ let Dubai={
 };
 
 //Paris
+// eslint-disable-next-line no-unused-vars
 let Paris={
   name:'Paris',
   minCustPerHour:20,
@@ -62,6 +70,7 @@ let Paris={
 };
 
 //Lima
+// eslint-disable-next-line no-unused-vars
 let Lima={
   name:'Lima',
   minCustPerHour:2,
@@ -76,17 +85,8 @@ let Lima={
   }
 };
 
-//generating random numbers
-function randomCustomers(minCustPerHour,maxCustPerHour){
-  return Math.floor(Math.random()*(maxCustPerHour-minCustPerHour+1)+minCustPerHour);
-}
-
 //sales.html
 let parent1=document.getElementById('location');
-let image=document.createElement('img');
-
-parent1.appendChild(image);
-image.setAttribute('src','img/salmon.png');
 
 //seattle
 let totalcookies=0;
@@ -101,7 +101,6 @@ parent1.appendChild(firstlist);
 
 //to add the items
 for(let n=0;n<seattle.cookiesPerHour.length;n++){
-  let listItem=document.createElement('li');
   firstlist.textContent=`${hours[n]}:${seattle.cookiesPerHour[n]} cookies`;
   totalcookies=totalcookies+seattle.cookiesPerHour[n];
 }
