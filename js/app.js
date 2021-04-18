@@ -96,9 +96,9 @@ parent1.appendChild(firstlist);
 
 //to add the items
 for(let n=0;n<seattle.cookiesPerHour.length;n++){
-  let firstlist=document.createElement('li');
+  let listItem=document.createElement('li');
   firstlist.appendChild(listItem);
-  firstlist.textContent=`${hours[n]}:${seattle.cookiesPerHour[n]} cookies`;
+  listItem.textContent=`${hours[n]}:${seattle.cookiesPerHour[n]} cookies`;
   totalcookies=totalcookies+seattle.cookiesPerHour[n];
 }
 
