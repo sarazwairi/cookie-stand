@@ -8,7 +8,6 @@ function randomCustomers(min,max){
 }
 //seattle
 let seattle={
-  name:'seattle',
   minCustPerHour:23,
   maxCustPerHour:65,
   avgCookie:6.3,
@@ -16,7 +15,7 @@ let seattle={
   cust:function(){
     for(let i=0;i<hours.lenght;i++){
       let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
-      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.cookiesPerHour));
+      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.avgCookie));
     }
   }
 };
@@ -101,6 +100,8 @@ parent1.appendChild(firstlist);
 
 //to add the items
 for(let n=0;n<seattle.cookiesPerHour.length;n++){
+  let firstlist=document.createElement('li');
+  firstlist.appendChild(listItem);
   firstlist.textContent=`${hours[n]}:${seattle.cookiesPerHour[n]} cookies`;
   totalcookies=totalcookies+seattle.cookiesPerHour[n];
 }
