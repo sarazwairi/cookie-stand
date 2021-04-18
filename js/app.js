@@ -8,14 +8,14 @@ function randomCustomers(min,max){
 }
 //seattle
 let seattle={
-  minCustPerHour:23,
-  maxCustPerHour:65,
-  avgCookie:6.3,
-  cookiesPerHour:[],
+  minCust:23,
+  maxCust:65,
+  avgCook:6.3,
+  numCook:[],
   cust:function(){
-    for(let i=0;i<hours.lenght;i++){
-      let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
-      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.avgCookie));
+    for(let n=0;n<hours.lenght;n++){
+      let numCust=randomCustomers(this.minCust,this.maxCust);
+      this.numCook.push(Math.floor(numCust*this.avgCook));
     }
   }
 };
@@ -23,14 +23,14 @@ let seattle={
 //Tokyo
 // eslint-disable-next-line no-unused-vars
 let Tokyo={
-  minCustPerHour:3,
-  maxCustPerHour:24,
-  avgCookie:1.2,
-  cookiesPerHour:[],
+  minCust:3,
+  maxCust:24,
+  avgCook:1.2,
+  numCook:[],
   cust:function(){
-    for(let i=0;i<hours.lenght;i++){
-      let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
-      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.avgCookie));
+    for(let n=0;n<hours.lenght;n++){
+      let numCust=randomCustomers(this.minCust,this.maxCust);
+      this.numCook.push(Math.floor(numCust*this.avgCook));
     }
   }
 };
@@ -38,14 +38,14 @@ let Tokyo={
 //Dubai
 // eslint-disable-next-line no-unused-vars
 let Dubai={
-  minCustPerHour:11,
-  maxCustPerHour:38,
-  avgCookie:3.7,
-  cookiesPerHour:[],
+  minCust:11,
+  maxCust:38,
+  avgCook:3.7,
+  numCook:[],
   cust:function(){
-    for(let i=0;i<hours.lenght;i++){
-      let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
-      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.avgCookie));
+    for(let n=0;n<hours.lenght;n++){
+      let numCust=randomCustomers(this.minCust,this.maxCust);
+      this.numCook.push(Math.floor(numCust*this.avgCook));
     }
   }
 };
@@ -53,14 +53,14 @@ let Dubai={
 //Paris
 // eslint-disable-next-line no-unused-vars
 let Paris={
-  minCustPerHour:20,
-  maxCustPerHour:38,
-  avgCookie:2.3,
-  cookiesPerHour:[],
+  minCust:20,
+  maxCust:38,
+  avgCook:2.3,
+  numCook:[],
   cust:function(){
-    for(let i=0;i<hours.lenght;i++){
-      let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
-      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.avgCookie));
+    for(let n=0;n<hours.lenght;n++){
+      let numCust=randomCustomers(this.minCust,this.maxCust);
+      this.numCook.push(Math.floor(numCust*this.avgCook));
     }
   }
 };
@@ -68,14 +68,14 @@ let Paris={
 //Lima
 // eslint-disable-next-line no-unused-vars
 let Lima={
-  minCustPerHour:2,
-  maxCustPerHour:16,
-  avgCookie:4.6,
-  cookiesPerHour:[],
+  minCust:2,
+  maxCust:16,
+  avgCook:4.6,
+  numCook:[],
   cust:function(){
-    for(let i=0;i<hours.lenght;i++){
-      let numOfCustomers=randomCustomers(this.minCustPerHour,this.maxCustPerHour);
-      this.cookiesPerHour.push(Math.floor(numOfCustomers*this.avgCookie));
+    for(let n=0;n<hours.lenght;n++){
+      let numCust=randomCustomers(this.minCust,this.maxCust);
+      this.numCook.push(Math.floor(numCust*this.avgCook));
     }
   }
 };
@@ -84,7 +84,7 @@ let Lima={
 let parent1=document.getElementById('location');
 
 //seattle
-let totalcookies=0;
+let totalCook=0;
 seattle.cust();
 
 let firstHeader=document.createElement('h2');
@@ -95,14 +95,106 @@ let firstlist=document.createElement('ul');
 parent1.appendChild(firstlist);
 
 //to add the items
-for(let n=0;n<seattle.cookiesPerHour.length;n++){
+for(let n=0;n<seattle.numCook.length;n++){
   let listItem=document.createElement('li');
   firstlist.appendChild(listItem);
-  listItem.textContent=`${hours[n]}:${seattle.cookiesPerHour[n]} cookies`;
-  totalcookies=totalcookies+seattle.cookiesPerHour[n];
+  listItem.textContent=`${hours[n]}:${seattle.numCook[n]} cookies`;
+  totalCook=totalCook+seattle.numCook[n];
 }
 
 //add the total
 let listItem=document.createElement('li');
 firstlist.appendChild(listItem);
-listItem.textContent=`Total: ${totalcookies}cookies`;
+listItem.textContent=`Total: ${totalCook}cookies`;
+
+//tokyo
+totalCook=0;
+Tokyo.cust();
+
+firstHeader=document.createElement('h2');
+parent1.appendChild(firstHeader);
+firstHeader.textContent='Tokyo';
+
+firstlist=document.createElement('ul');
+parent1.appendChild(firstlist);
+//to add the items
+for(let n=0;n<Tokyo.numCook.length;n++){
+  let listItem=document.createElement('li');
+  firstlist.appendChild(listItem);
+  listItem.textContent=`${hours[n]}:${Tokyo.numCook[n]} cookies`;
+  totalCook=totalCook+Tokyo.numCook[n];
+}
+
+//add the total
+listItem=document.createElement('li');
+firstlist.appendChild(listItem);
+listItem.textContent=`Total: ${totalCook}cookies`;
+
+//dubai
+totalCook=0;
+Dubai.cust();
+
+firstHeader=document.createElement('h2');
+parent1.appendChild(firstHeader);
+firstHeader.textContent='Dubai';
+
+firstlist=document.createElement('ul');
+parent1.appendChild(firstlist);
+//to add the items
+for(let n=0;n<Dubai.numCook.length;n++){
+  let listItem=document.createElement('li');
+  firstlist.appendChild(listItem);
+  listItem.textContent=`${hours[n]}:${Dubai.numCook[n]} cookies`;
+  totalCook=totalCook+Dubai.numCook[n];
+}
+
+//add the total
+listItem=document.createElement('li');
+firstlist.appendChild(listItem);
+listItem.textContent=`Total: ${totalCook}cookies`;
+
+//Paris
+totalCook=0;
+Paris.cust();
+
+firstHeader=document.createElement('h2');
+parent1.appendChild(firstHeader);
+firstHeader.textContent='Paris';
+
+firstlist=document.createElement('ul');
+parent1.appendChild(firstlist);
+//to add the items
+for(let n=0;n<Paris.numCook.length;n++){
+  let listItem=document.createElement('li');
+  firstlist.appendChild(listItem);
+  listItem.textContent=`${hours[n]}:${Paris.numCook[n]} cookies`;
+  totalCook=totalCook+Paris.numCook[n];
+}
+
+//add the total
+listItem=document.createElement('li');
+firstlist.appendChild(listItem);
+listItem.textContent=`Total: ${totalCook}cookies`;
+
+//Lima
+totalCook=0;
+Lima.cust();
+
+firstHeader=document.createElement('h2');
+parent1.appendChild(firstHeader);
+firstHeader.textContent='Lima';
+
+firstlist=document.createElement('ul');
+parent1.appendChild(firstlist);
+//to add the items
+for(let n=0;n<Lima.numCook.length;n++){
+  let listItem=document.createElement('li');
+  firstlist.appendChild(listItem);
+  listItem.textContent=`${hours[n]}:${Lima.numCook[n]} cookies`;
+  totalCook=totalCook+Lima.numCook[n];
+}
+
+//add the total
+listItem=document.createElement('li');
+firstlist.appendChild(listItem);
+listItem.textContent=`Total: ${totalCook}cookies`;
