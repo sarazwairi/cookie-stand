@@ -19,6 +19,7 @@ function Store(location,minCust,maxCust,avgCook){
   this.total=0;
 }
 
+//cust per hour
 Store.prototype.calccustPerHour=function(){
   for(let i=0;i<hours.length-1;i++){
     this.custPerHour.push(randomValue(this.minCust,this.maxCust));
@@ -56,7 +57,7 @@ function heading(){
   let thead=document.createElement('thead');
   tableID.appendChild(thead);
   let tableRow=document.createElement('tr');
-  tableID.appendChild(tableRow);
+  thead.appendChild(tableRow);
   let tdEl1=document.createElement('td');
   tableRow.appendChild(tdEl1);
   tdEl1.textContent='stores';
