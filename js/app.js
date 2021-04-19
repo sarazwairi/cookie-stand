@@ -27,7 +27,7 @@ Store.prototype.calccustPerHour=function(){
 };
 
 //calcuate the cookie per hour
-Store.prototype.calccookPerHour=function(){
+Store.prototype.calccookPerhour=function(){
   for(let i=0;i<hours.length-1;i++){
     this.cook.push(this.custPerHour[i]*Math.floor(this.avgCook));
     this.total=this.total+this.cook[i];
@@ -61,11 +61,11 @@ function heading(){
   let tdEl1=document.createElement('td');
   tableRow.appendChild(tdEl1);
   tdEl1.textContent='stores';
-  let tdEl;
+  let thEl;
   for (let i=0;i<this.hours.length;i++){
-    tdEl=document.createElement('th');
-    tableRow.appendChild(tdEl);
-    tdEl.textContent=hours[i];
+    thEl=document.createElement('th');
+    tableRow.appendChild(thEl);
+    thEl.textContent=hours[i];
   }
 }
 
@@ -79,7 +79,7 @@ function footers(){
   tableRow.appendChild(tdEl1);
   tdEl1.textContent='total';
   let tdEl;
-  for (let i=0;i<hours.length;i++){
+  for (let i=0;i<hours.length-1;i++){
     tdEl=document.createElement('td');
     tableRow.appendChild(tdEl);
     tdEl.textContent=`${arrTotal[i]}`;
