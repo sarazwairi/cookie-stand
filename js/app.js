@@ -119,3 +119,5 @@ let lima=new Store('lima',2,16,4.6);
 lima.calccustPerHour();
 lima.calccookPerhour();
 lima.createElement();
+
+footers();
