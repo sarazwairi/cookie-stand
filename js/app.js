@@ -4,6 +4,11 @@ let tableID=document.getElementById('tableID');
 let arrTotal=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let totals=0;
 
+//random value generator
+function randomValue(min,max){
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+
 function Store(location,minCust,maxCust,avgCook){
   this.location=location;
   this.minCust=minCust;
