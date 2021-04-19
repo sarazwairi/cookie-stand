@@ -62,12 +62,13 @@ function heading(){
   tableRow.appendChild(tdEl1);
   tdEl1.textContent='stores';
   let thEl;
-  for (let i=0;i<this.hours.length;i++){
+  for (let i=0;i<hours.length;i++){
     thEl=document.createElement('th');
     tableRow.appendChild(thEl);
     thEl.textContent=hours[i];
   }
 }
+heading();
 
 //creat footer
 function footers(){
@@ -88,7 +89,7 @@ function footers(){
   tableRow.appendChild(tdEl);
   tdEl.textContent=`${totals}`;
 }
-heading();
+
 
 //call the elements of objects to the table
 
