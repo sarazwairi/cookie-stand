@@ -1,5 +1,5 @@
 'use strict';
-let hours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
+let hours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','total'];
 let tableID=document.getElementById('tableID');
 let arrTotal=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let totals=0;
@@ -68,7 +68,6 @@ function heading(){
     thEl.textContent=hours[i];
   }
 }
-heading();
 
 //creat footer
 function footers(){
@@ -90,6 +89,7 @@ function footers(){
   tdEl.textContent=`${totals}`;
 }
 
+heading();
 
 //call the elements of objects to the table
 
