@@ -3,6 +3,8 @@ let hours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm',
 let tableID=document.getElementById('tableID');
 let arrTotal=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let totals=0;
+let storeArray=[];
+let footer=document.createElement('tfoot');
 
 //random value generator
 function randomValue(min,max){
@@ -71,7 +73,7 @@ function heading(){
 
 //creat footer
 function footers(){
-  let footer=document.createElement('tfoot');
+
   tableID.appendChild(footer);
   let tableRow=document.createElement('tr');
   footer.appendChild(tableRow);
@@ -89,6 +91,26 @@ function footers(){
   tdEl.textContent=`${totals}`;
 }
 
+const form =document.getElementById('storeform');
+form.addEventListener('submit',stores);
+
+function stores(event){
+  event.preventDefault();
+
+  let storeName=event.target.storeName.value;
+  let mincust=event.target.mincust.value;
+  let maxcust=event.target.maxcust.value;
+  let avgcook=event.target.avgcook.value;
+
+  let newStore=new Store(storeName,mincust,maxcust,avgcook);
+  newStore.calccustPerHour();
+  newStore.calccookPerhour();
+  newStore.createElement();
+
+  tableID.deleteRow(tableID.rows.length-1);
+  footers();
+}
+
 heading();
 
 //call the elements of objects to the table
@@ -96,30 +118,35 @@ heading();
 let seattle=new Store('seattle',23,65,6.3);
 seattle.calccustPerHour();
 seattle.calccookPerhour();
-seattle.createElement();
+
 
 
 let tokyo=new Store('tokyo',3,24,1.2);
 tokyo.calccustPerHour();
 tokyo.calccookPerhour();
-tokyo.createElement();
+
 
 
 let dubai=new Store('Dubai',11,38,3.7);
 dubai.calccustPerHour();
 dubai.calccookPerhour();
-dubai.createElement();
+
 
 
 let paris=new Store('Paris',20,38,2.3);
 paris.calccustPerHour();
 paris.calccookPerhour();
-paris.createElement();
+
 
 
 let lima=new Store('lima',2,16,4.6);
 lima.calccustPerHour();
 lima.calccookPerhour();
-lima.createElement();
+
+storeArray=[seattle,tokyo,dubai,paris,lima];
+
+for (let i=0;i<storeArray.length;i++){
+  storeArray[i].createElement();
+}
 
 footers();
