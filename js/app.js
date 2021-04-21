@@ -98,9 +98,9 @@ function stores(event){
   event.preventDefault();
 
   let storeName=event.target.storeName.value;
-  let mincust=parseInt(event.target.mincust.value);
-  let maxcust=parseInt(event.target.maxcust.value);
-  let avgcook=parseFloat(event.target.avgcook.value);
+  let mincust=event.target.mincust.value;
+  let maxcust=event.target.maxcust.value;
+  let avgcook=event.target.avgcook.value;
 
   let newStore=new Store(storeName,mincust,maxcust,avgcook);
   newStore.calccustPerHour();
