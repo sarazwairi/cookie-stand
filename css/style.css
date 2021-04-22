@@ -1,26 +1,54 @@
+
+body{
+    background-color:rgb(165, 165, 165);
+    font-family: 'Dancing Script', cursive;
+}
+header h1{
+    font-family: 'Dancing Script', cursive;
+    color:black;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 100;
+}
 h1{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: indianred;
     text-align: center;
 }
-a:visited{
-    color: green;
+h2{
+    color: rgp(99,51,100);
+    font-style: normal;
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+    margin-left: 50px;
+
 }
 a{
     font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:darkslateblue;
 }
 ul div{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 40px;
+    color: darkmagenta;
 }
 
 img{
     border-radius: 50%;
+    position: relative;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-direction: reverse;
+
+}
+@keyframes example{
+    0%{left:0px;top:0px}
+    100%{left:500px;top:0px}
 }
 th,td{
+    border-bottom: 1px solid rgb(39,28,28);
     padding: 8px;
-    border-bottom: 1px solid cornflowerblue;
+    border-bottom: 1px solid rgb(100, 149, 237);
     background-color:lightgray;
 }
 
@@ -28,10 +56,10 @@ tables{
     text-align: center;
     width: 100%;
     margin-top: 5%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
 }
 button:hover{
-    color: green;
+    color: rgb(161, 124, 156);
 }
 footer{
     text-align: center;
@@ -41,6 +69,15 @@ table{
     margin-left: auto;
     margin-right: auto;
 }
-.button{
-    
+#storeform{
+    margin-left: 45%;
+    margin-right: 50%;
+    padding-bottom: 50px;
 }
+legend{
+    font-size: 20px;
+}
+label{
+    font-size: 20px;
+}
+
